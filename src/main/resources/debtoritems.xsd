@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://spring.io/guides/gs-producing-web-service"
+           targetNamespace="http://spring.io/guides/gs-producing-web-service" elementFormDefault="qualified">
+
+    <xs:element name="getDebtorItemRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customerId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDebtorItemResponse">
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element name="debtorItem" type="tns:debtorItem" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="debtorItem">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="customerId" type="xs:string"/>
+            <xs:element name="amount" type="xs:int"/>
+            <xs:element name="dueDate" type="xs:string"/>
+            <xs:element name="referenceNumber" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
