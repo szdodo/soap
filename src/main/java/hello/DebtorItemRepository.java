@@ -1,15 +1,17 @@
 package hello;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
-import io.spring.guides.gs_producing_web_service.DebtorItem;
+import com.stc.caseless.soap_service.DebtorItem;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
-import io.spring.guides.gs_producing_web_service.GetDebtorItemResponse;
+import com.stc.caseless.soap_service.GetDebtorItemResponse;
 
 @Component
 public class DebtorItemRepository {
@@ -20,7 +22,14 @@ public class DebtorItemRepository {
 		DebtorItem randomDebtorItem = new DebtorItem();
 		randomDebtorItem.setId(randomString());
 		randomDebtorItem.setAmount(rand.nextInt(50) + 1);
-		randomDebtorItem.setDueDate((rand.nextInt(30) + 1) + "/" + (rand.nextInt(12) + 1) + "/" + (rand.nextInt(2050) + 1500));
+
+		try {
+			GregorianCalendar c = new GregorianCalendar((rand.nextInt(550) + 1500), (rand.nextInt(12) + 1), (rand.nextInt(30) + 1));
+			XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+			randomDebtorItem.setDueDate(date2);
+		}
+		catch(DatatypeConfigurationException x){}
+
 		randomDebtorItem.setReferenceNumber(rand.nextInt(5000) + 1);
 
 		return randomDebtorItem;

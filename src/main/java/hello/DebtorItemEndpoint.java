@@ -6,14 +6,14 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import io.spring.guides.gs_producing_web_service.GetDebtorItemRequest;
-import io.spring.guides.gs_producing_web_service.GetDebtorItemResponse;
+import com.stc.caseless.soap_service.GetDebtorItemRequest;
+import com.stc.caseless.soap_service.GetDebtorItemResponse;
 
 import java.util.Random;
 
 @Endpoint
 public class DebtorItemEndpoint {
-	private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
+	private static final String NAMESPACE_URI = "http://stc.com/caseless/soap-service";
 
 	private DebtorItemRepository debtorItemRepository;
 

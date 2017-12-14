@@ -1,9 +1,9 @@
 /home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/hello/WebServiceConfig.java
-/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/io/spring/guides/gs_producing_web_service/ObjectFactory.java
-/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/io/spring/guides/gs_producing_web_service/GetDebtorItemRequest.java
-/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/io/spring/guides/gs_producing_web_service/package-info.java
-/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/io/spring/guides/gs_producing_web_service/GetDebtorItemResponse.java
+/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/com/stc/caseless/soap_service/DebtorItem.java
+/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/com/stc/caseless/soap_service/ObjectFactory.java
+/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/com/stc/caseless/soap_service/GetDebtorItemResponse.java
+/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/com/stc/caseless/soap_service/package-info.java
 /home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/hello/Application.java
-/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/io/spring/guides/gs_producing_web_service/DebtorItem.java
 /home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/hello/DebtorItemRepository.java
+/home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/com/stc/caseless/soap_service/GetDebtorItemRequest.java
 /home/dorottyaszeghi/java/gs-producing-web-service-master/complete/src/main/java/hello/DebtorItemEndpoint.java

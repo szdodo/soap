@@ -1,5 +1,5 @@
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-				  xmlns:gs="http://spring.io/guides/gs-producing-web-service">
+				  xmlns:gs="http://stc.com/caseless/soap-service">
    <soapenv:Header/>
    <soapenv:Body>
       <gs:getDebtorItemRequest>
