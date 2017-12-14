@@ -1,17 +1,16 @@
 package hello;
 
+import com.stc.caseless.soap_service.DebtorItem;
+import org.springframework.stereotype.Component;
+
 import javax.annotation.PostConstruct;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Random;
-
-import com.stc.caseless.soap_service.DebtorItem;
-import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
-import com.stc.caseless.soap_service.GetDebtorItemResponse;
 
 @Component
 public class DebtorItemRepository {
@@ -24,9 +23,12 @@ public class DebtorItemRepository {
 		randomDebtorItem.setAmount(rand.nextInt(50) + 1);
 
 		try {
-			GregorianCalendar c = new GregorianCalendar((rand.nextInt(550) + 1500), (rand.nextInt(12) + 1), (rand.nextInt(30) + 1));
-			XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
-			randomDebtorItem.setDueDate(date2);
+			Date date = new Date((rand.nextInt(150) + 1), (rand.nextInt(12) + 1), (rand.nextInt(30) + 1));
+			String FORMATER = "yyyy-MM-dd";
+			DateFormat format = new SimpleDateFormat(FORMATER);
+			XMLGregorianCalendar gDateFormatted = DatatypeFactory.newInstance()
+					.newXMLGregorianCalendar(format.format(date));
+			randomDebtorItem.setDueDate(gDateFormatted);
 		}
 		catch(DatatypeConfigurationException x){}
 
